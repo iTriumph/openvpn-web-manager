@@ -5,22 +5,9 @@ builds:
     binary: openvpn-web
     goos:
       - linux
-      - windows
-      - darwin
     goarch:
       - amd64
       - arm64
-      - arm
-    goarm:
-      - 6
-      - 7
-    ignore:
-      - goos: windows
-        goarch: arm64
-      - goos: windows
-        goarch: arm
-      - goos: darwin
-        goarch: arm
     env:
       - CGO_ENABLED=0
     ldflags:
