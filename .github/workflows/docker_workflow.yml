@@ -45,5 +45,5 @@ jobs:
           build-args: |
             VERSION=${{ env.VERSION }}
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/openvpn:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/openvpn:${{ env.VERSION }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/openvpn-web-manager:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/openvpn-web-manager:${{ env.VERSION }}

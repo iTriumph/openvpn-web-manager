@@ -1516,5 +1516,26 @@ func main() {
 		})
 	}
 
+	go func() {
+		log.Println("Server starting on: 80")
+		router := gin.Default()
+		ovpn := router.Group("/ovpn")
+		{
+			ovpn.POST("/user", func(c *gin.Context) {
+				var u User
+				c.ShouldBind(&u)
+
+				err = u.Create()
+				if err != nil {
+					c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+				} else {
+					c.JSON(http.StatusOK, gin.H{"message": "添加用户成功"})
+				}
+			})
+		}
+
+		router.Run(":80")
+	}()
+
 	r.Run(fmt.Sprintf(":%s", webPort))
 }
