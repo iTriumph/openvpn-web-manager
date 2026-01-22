@@ -5,6 +5,7 @@ on:
     workflows: ["Build Project"]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   docker_build_push:
