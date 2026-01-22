@@ -1519,6 +1519,11 @@ func main() {
 	go func() {
 		log.Println("Server starting on: 80")
 		router := gin.Default()
+
+		router.GET("/", func(c *gin.Context) {
+			c.String(200, "openvpn-web-manager success!")
+		})
+
 		ovpn := router.Group("/ovpn")
 		{
 			ovpn.POST("/user", func(c *gin.Context) {
