@@ -19,7 +19,6 @@ archives:
       {{- .Os }}-
       {{- if eq .Arch "amd64" }}x86_64
       {{- else if eq .Arch "arm64" }}aarch64
-      {{- else if eq .Arch "arm" }}armv{{ .Arm }}l
       {{- else }}{{ .Arch }}{{ end }}
 checksum:
   name_template: 'openvpn-web_sha256_checksums.txt'
